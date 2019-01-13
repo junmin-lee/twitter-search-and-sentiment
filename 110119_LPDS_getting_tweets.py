@@ -18,9 +18,9 @@ auth.set_access_token(access_token,access_token_secret)
 #Create main variable
 api = tweepy.API(auth)
 
-#Search
-public_tweets = api.search('Trump')
-
+#Get an string input from user
+search_word = input('Enter search word: ')
+public_tweets = api.search(q=search_word) 
 # Prepare to write csv file as an output
 tweet_file = open('tweet_output.csv','w',encoding='utf-8',newline='')
 
